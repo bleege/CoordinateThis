@@ -9,17 +9,23 @@
 import Foundation
 import UIKit
 
-class AppCoordinator {
-    
-    // MARK: Properties
-    let window: UIWindow
-    var navigationController: UINavigationController = UINavigationController()
+class AppCoordinator: Coordinator {
 
-    public init(window: UIWindow) {
+    let window: UIWindow
+    let rootViewController: UINavigationController
+    
+    init(window: UIWindow) {
         self.window = window
+        self.rootViewController = UINavigationController()
         
-        self.window.rootViewController = self.navigationController
+        // Testing
+        let emptyViewController = UIViewController()
+        emptyViewController.view.backgroundColor = .cyan
+        rootViewController.pushViewController(emptyViewController, animated: false)
+    }
+
+    func start() {
+        self.window.rootViewController = self.rootViewController
         self.window.makeKeyAndVisible()
     }
-    
 }
