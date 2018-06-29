@@ -19,9 +19,8 @@ class AppCoordinator: Coordinator {
         self.rootViewController = UINavigationController()
         
         // Testing
-        let emptyViewController = UIViewController()
-        emptyViewController.view.backgroundColor = .cyan
-        rootViewController.pushViewController(emptyViewController, animated: false)
+        let loadingViewController = LoadingViewController()
+        rootViewController.pushViewController(loadingViewController, animated: false)
     }
 
     func start() {

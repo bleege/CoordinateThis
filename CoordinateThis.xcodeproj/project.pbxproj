@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		A21FD7F320E44FA300148888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21FD7F220E44FA300148888 /* AppDelegate.swift */; };
-		A21FD7F520E44FA300148888 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21FD7F420E44FA300148888 /* ViewController.swift */; };
+		A21FD7F520E44FA300148888 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21FD7F420E44FA300148888 /* LoadingViewController.swift */; };
 		A21FD7FA20E44FA400148888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21FD7F920E44FA400148888 /* Assets.xcassets */; };
 		A21FD80520E4514400148888 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21FD80420E4514400148888 /* AppCoordinator.swift */; };
 		A2A5A49D20E5C47000EEDD42 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5A49C20E5C47000EEDD42 /* Coordinator.swift */; };
 		A2A5A49F20E5C70B00EEDD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A5A49E20E5C70B00EEDD42 /* LaunchScreen.storyboard */; };
+		A2A5A4A120E5CCF200EEDD42 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A5A4A020E5CCF200EEDD42 /* LoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A21FD7EF20E44FA300148888 /* CoordinateThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinateThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21FD7F220E44FA300148888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A21FD7F420E44FA300148888 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A21FD7F420E44FA300148888 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A21FD7F920E44FA400148888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21FD7FE20E44FA400148888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21FD80420E4514400148888 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A2A5A49C20E5C47000EEDD42 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A2A5A49E20E5C70B00EEDD42 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A2A5A4A020E5CCF200EEDD42 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,8 @@
 				A21FD7F220E44FA300148888 /* AppDelegate.swift */,
 				A21FD80420E4514400148888 /* AppCoordinator.swift */,
 				A2A5A49C20E5C47000EEDD42 /* Coordinator.swift */,
-				A21FD7F420E44FA300148888 /* ViewController.swift */,
+				A21FD7F420E44FA300148888 /* LoadingViewController.swift */,
+				A2A5A4A020E5CCF200EEDD42 /* LoadingView.xib */,
 				A21FD7F920E44FA400148888 /* Assets.xcassets */,
 				A21FD7FE20E44FA400148888 /* Info.plist */,
 				A2A5A49E20E5C70B00EEDD42 /* LaunchScreen.storyboard */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2A5A4A120E5CCF200EEDD42 /* LoadingView.xib in Resources */,
 				A21FD7FA20E44FA400148888 /* Assets.xcassets in Resources */,
 				A2A5A49F20E5C70B00EEDD42 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -139,7 +143,7 @@
 			files = (
 				A2A5A49D20E5C47000EEDD42 /* Coordinator.swift in Sources */,
 				A21FD80520E4514400148888 /* AppCoordinator.swift in Sources */,
-				A21FD7F520E44FA300148888 /* ViewController.swift in Sources */,
+				A21FD7F520E44FA300148888 /* LoadingViewController.swift in Sources */,
 				A21FD7F320E44FA300148888 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
