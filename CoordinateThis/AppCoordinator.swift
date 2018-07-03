@@ -11,20 +11,34 @@ import UIKit
 
 class AppCoordinator: Coordinator {
 
-    let window: UIWindow
-    let rootViewController: UINavigationController
+    enum State {
+        case loading
+        case master
+        case detail
+    }
+    
+    private let window: UIWindow
+    private let rootViewController: UINavigationController
     
     init(window: UIWindow) {
         self.window = window
         self.rootViewController = UINavigationController()
-        
-        // Testing
-        let loadingViewController = LoadingViewController()
-        rootViewController.pushViewController(loadingViewController, animated: false)
     }
 
-    func start() {
+    func start(state: State = .loading) {
         self.window.rootViewController = self.rootViewController
         self.window.makeKeyAndVisible()
+                
+        switch state {
+            case .loading:
+                let loadingViewController = LoadingViewController()
+                rootViewController.pushViewController(loadingViewController, animated: false)
+            case .master:
+                let masterViewController = MasterViewController()
+                rootViewController.pushViewController(masterViewController, animated: false)
+            default:
+                print("This shouldn't happen")
+        }
+        
     }
 }

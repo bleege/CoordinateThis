@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.appCoordinator = applicationCoordinator
         
-        self.appCoordinator.start()
+        self.appCoordinator.start(state: .master)
         
         return true
     }

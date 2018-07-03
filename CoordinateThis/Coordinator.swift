@@ -9,6 +9,6 @@
 import Foundation
 
 protocol Coordinator {
-    func start()
+    func start(state: AppCoordinator.State)
 }
 
