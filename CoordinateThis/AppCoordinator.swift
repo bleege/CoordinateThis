@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator, LoadingViewControllerDelegate {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
@@ -26,13 +26,20 @@ class AppCoordinator: Coordinator {
         switch state {
             case .loading:
                 let loadingViewController = LoadingViewController()
+                loadingViewController.delegate = self
                 rootViewController.pushViewController(loadingViewController, animated: false)
             case .master:
+                rootViewController.viewControllers = []
                 let masterViewController = MasterViewController()
                 rootViewController.pushViewController(masterViewController, animated: false)
             default:
                 print("This shouldn't happen")
         }
         
+    }
+    
+    // MARK: LoadingViewControllerDelegate
+    func advanceToNextState() {
+        start(state: .master)
     }
 }
