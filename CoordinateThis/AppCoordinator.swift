@@ -32,6 +32,9 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate {
                 rootViewController.viewControllers = []
                 let masterViewController = MasterViewController()
                 rootViewController.pushViewController(masterViewController, animated: false)
+            case .detail:
+                let detailViewController = DetailViewController()
+                rootViewController.pushViewController(detailViewController, animated: true)
             default:
                 print("This shouldn't happen")
         }
