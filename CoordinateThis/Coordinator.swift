@@ -9,6 +9,11 @@
 import Foundation
 
 protocol Coordinator {
-    func start(state: AppCoordinator.State)
+    func start(state: State)
 }
 
+enum State {
+    case loading
+    case master
+    case detail
+}

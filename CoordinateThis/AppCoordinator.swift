@@ -10,12 +10,6 @@ import Foundation
 import UIKit
 
 class AppCoordinator: Coordinator {
-
-    enum State {
-        case loading
-        case master
-        case detail
-    }
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
