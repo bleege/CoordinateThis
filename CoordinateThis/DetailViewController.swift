@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     private var goBackViaDelegation = UIButton()
+    private var goBackViaRx = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,19 @@ class DetailViewController: UIViewController {
         goBackViaDelegation.setTitle("Go back via Delegation!", for: .normal)
         goBackViaDelegation.setTitleColor(UIColor.black, for: .normal)
         
+        goBackViaRx.setTitle("Go back via Rx", for: .normal)
+        goBackViaRx.setTitleColor(UIColor.black, for: .normal)
+        
         view.addSubview(goBackViaDelegation)
+        view.addSubview(goBackViaRx)
         goBackViaDelegation.translatesAutoresizingMaskIntoConstraints = false
+        goBackViaRx.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            goBackViaDelegation.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0.5),
-            goBackViaDelegation.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.25)
+            goBackViaDelegation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            goBackViaDelegation.topAnchor.constraint(equalTo: view.topAnchor, constant: view.bounds.height * 0.34),
+            goBackViaRx.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            goBackViaRx.topAnchor.constraint(equalTo: view.topAnchor, constant: view.bounds.height * 0.67)
             ])
     }
 }
