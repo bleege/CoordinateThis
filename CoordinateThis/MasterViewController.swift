@@ -28,8 +28,8 @@ class MasterViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-                button.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0.5),
-                button.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.5)
+                button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
     }
 }
