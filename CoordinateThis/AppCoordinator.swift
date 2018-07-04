@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AppCoordinator: Coordinator, LoadingViewControllerDelegate {
+class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewControllerDelegate {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
@@ -31,6 +31,7 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate {
             case .master:
                 rootViewController.viewControllers = []
                 let masterViewController = MasterViewController()
+                masterViewController.delegate = self
                 rootViewController.pushViewController(masterViewController, animated: false)
             case .detail:
                 let detailViewController = DetailViewController()
@@ -45,4 +46,10 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate {
     func advanceToNextState() {
         start(state: .master)
     }
+    
+    // MARK: MasterViewControllerDelegate
+    func advanceToDetail() {
+        start(state: .detail)
+    }
+
 }
