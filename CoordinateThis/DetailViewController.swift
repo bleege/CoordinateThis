@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate: AnyObject {
+    func returnToMaster()
+}
+
 class DetailViewController: UIViewController {
     
     private var goBackViaDelegation = UIButton()
     private var goBackViaRx = UIButton()
 
+    weak var delegate: DetailViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,6 +30,7 @@ class DetailViewController: UIViewController {
         
         goBackViaDelegation.setTitle("Go back via Delegation!", for: .normal)
         goBackViaDelegation.setTitleColor(UIColor.black, for: .normal)
+        goBackViaDelegation.addTarget(self, action: #selector(handleGoBackViaDelegate(sender:)), for: .touchUpInside)
         
         goBackViaRx.setTitle("Go back via Rx", for: .normal)
         goBackViaRx.setTitleColor(UIColor.black, for: .normal)
@@ -39,5 +46,9 @@ class DetailViewController: UIViewController {
             goBackViaRx.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             goBackViaRx.topAnchor.constraint(equalTo: view.topAnchor, constant: view.bounds.height * 0.67)
             ])
+    }
+    
+    @objc func handleGoBackViaDelegate(sender: AnyObject) {
+        delegate?.returnToMaster()
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewControllerDelegate {
+class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewControllerDelegate, DetailViewControllerDelegate {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
@@ -35,6 +35,7 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewCont
                 rootViewController.pushViewController(masterViewController, animated: false)
             case .detail:
                 let detailViewController = DetailViewController()
+                detailViewController.delegate = self
                 rootViewController.pushViewController(detailViewController, animated: true)
             default:
                 print("This shouldn't happen")
@@ -52,4 +53,8 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewCont
         start(state: .detail)
     }
 
+    // MARK: DetailViewControllerDelegate
+    func returnToMaster() {
+        start(state: .master)
+    }
 }
