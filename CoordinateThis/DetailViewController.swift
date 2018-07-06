@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol DetailViewControllerDelegate: AnyObject {
     func returnToMaster()
@@ -18,6 +20,11 @@ class DetailViewController: UIViewController {
     private var goBackViaRx = UIButton()
 
     weak var delegate: DetailViewControllerDelegate?
+    var goBackClicks: ControlEvent<Void> {
+        get {
+            return goBackViaRx.rx.tap
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

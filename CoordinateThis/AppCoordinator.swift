@@ -8,15 +8,18 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewControllerDelegate, DetailViewControllerDelegate {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
+    private let disposeBag: DisposeBag
     
     init(window: UIWindow) {
         self.window = window
         self.rootViewController = UINavigationController()
+        self.disposeBag = DisposeBag()
     }
 
     func start(state: State = .loading) {
@@ -36,6 +39,9 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewCont
             case .detail:
                 let detailViewController = DetailViewController()
                 detailViewController.delegate = self
+                detailViewController.goBackClicks.subscribe { (_) in
+                    self.rootViewController.popViewController(animated: true)
+                }.disposed(by: disposeBag)
                 rootViewController.pushViewController(detailViewController, animated: true)
             default:
                 print("This shouldn't happen")
