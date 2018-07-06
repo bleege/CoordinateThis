@@ -23,7 +23,7 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         activityIndicator.startAnimating()
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { _ in self.delegate?.advanceToNextState()})
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { _ in self.delegate?.advanceToNextState()})
     }
 
     override func didReceiveMemoryWarning() {

@@ -55,6 +55,6 @@ class AppCoordinator: Coordinator, LoadingViewControllerDelegate, MasterViewCont
 
     // MARK: DetailViewControllerDelegate
     func returnToMaster() {
-        start(state: .master)
+        rootViewController.popViewController(animated: true)
     }
 }
